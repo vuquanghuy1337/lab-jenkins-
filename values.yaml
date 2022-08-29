@@ -317,11 +317,30 @@ controller:
   # etc.  Best reference is https://<jenkins_url>/configuration-as-code/reference.  The example below creates a welcome message:
   JCasC:
     defaultConfig: true
-    configScripts: {}
-    #  welcome-message: |
-    #    jenkins:
-    #      systemMessage: Welcome to our CI\CD server.  This Jenkins is configured and managed 'as code'.
-    # Allows adding to the top-level security JCasC section. For legacy,  default the chart includes apiToken configurations
+    configScripts: 
+      welcome-message: |
+        {{ .Files.Get "jcasc.yaml" }}
+#        jenkins:
+#          systemMessage: "All configuration for this controller is done as code (JCasC)"
+#        jobs:
+#          - script: >
+#              pipelineJob("Seed or update all pipelines") {
+#              definition {
+#                  cpsScm {
+#                      scm {
+#                          git{
+#                           remote {
+#                            url("https://github.com/m-goos/jenkins-jobdsl-seedrepo-example.git")
+#                           }
+#                           branch("*/main")
+#                          }
+#                      }
+#                  }
+#                }
+#              }
+#
+
+# Allows adding to the top-level security JCasC section. For legacy,  default the chart includes apiToken configurations
     security:
       apiToken:
         creationOfLegacyTokenEnabled: false
