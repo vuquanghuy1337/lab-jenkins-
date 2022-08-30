@@ -27,12 +27,5 @@ spec:
     requests:
       storage: {{ .Values.persistence.size | quote }}
   volumeName: jenkins-huy
-{{- if .Values.persistence.storageClass }}
-{{- if (eq "-" .Values.persistence.storageClass) }}
-  storageClassName: ""
-{{- else }}
-  storageClassName: "{{ .Values.persistence.storageClass }}"
-{{- end }}
-{{- end }}
 {{- end }}
 {{- end }}
