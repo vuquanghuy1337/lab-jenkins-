@@ -9,5 +9,6 @@ spec:
   capacity:
     storage: 20Gi
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
   hostPath:
     path: /data/jenkins-volume/

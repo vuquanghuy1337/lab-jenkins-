@@ -27,5 +27,7 @@ spec:
     requests:
       storage: {{ .Values.persistence.size | quote }}
   volumeName: jenkins-pv-huy
+  storageClassName: manual
+
 {{- end }}
 {{- end }}
