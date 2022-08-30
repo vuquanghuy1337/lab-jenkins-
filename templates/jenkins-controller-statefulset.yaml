@@ -262,7 +262,7 @@ spec:
               name: jenkins-https-keystore
             {{- end }}
             - mountPath: {{ .Values.controller.jenkinsHome }}
-              name: jenkins
+              name: jenkins-home
               readOnly: false
               {{- if .Values.persistence.subPath }}
               subPath: {{ .Values.persistence.subPath }}
@@ -342,9 +342,6 @@ spec:
 {{- end }}
 
       volumes:
-      - name: jenkins
-        persistentVolumeClaim:
-          claimName: jenkins-claim
 {{- if .Values.persistence.volumes }}
 {{ tpl (toYaml .Values.persistence.volumes | indent 6) . }}
 {{- end }}
