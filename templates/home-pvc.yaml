@@ -21,6 +21,7 @@ metadata:
 {{ toYaml .Values.persistence.labels | indent 4 }}
 {{- end }}
 spec:
+  storageClassName: manual
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
   resources:
