@@ -342,6 +342,9 @@ spec:
 {{- end }}
 
       volumes:
+      - name: jenkins
+        persistentVolumeClaim:
+          claimName: jenkins-claim
 {{- if .Values.persistence.volumes }}
 {{ tpl (toYaml .Values.persistence.volumes | indent 6) . }}
 {{- end }}
