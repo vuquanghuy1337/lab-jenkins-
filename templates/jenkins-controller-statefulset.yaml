@@ -253,8 +253,6 @@ spec:
           resources:
 {{ toYaml .Values.controller.resources | indent 12 }}
           volumeMounts:
-            - mountPath: /var/jenkins_home
-              name: jenkins
 {{- if .Values.persistence.mounts }}
 {{ toYaml .Values.persistence.mounts | indent 12 }}
 {{- end }}
@@ -264,7 +262,7 @@ spec:
               name: jenkins-https-keystore
             {{- end }}
             - mountPath: {{ .Values.controller.jenkinsHome }}
-              name: jenkins-home
+              name: jenkins
               readOnly: false
               {{- if .Values.persistence.subPath }}
               subPath: {{ .Values.persistence.subPath }}
