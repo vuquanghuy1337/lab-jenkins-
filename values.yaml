@@ -242,7 +242,25 @@ controller:
     - workflow-aggregator:581.v0c46fa_697ffd
     - git:4.11.3
     - configuration-as-code:1429.v09b_044a_c93de
-    - jobDSL:latest
+    - job-dsl:latest
+    - ant:latest
+    - antisamy-markup-formatter:latest
+    - authorize-project:latest
+    - build-timeout:latest
+    - cloudbees-folder:latest
+    - credentials:latest
+    - email-ext:latest
+    - gradle:latest
+    - ldap:latest
+    - mailer:latest
+    - matrix-auth:latest
+    - nodejs:latest
+    - pam-auth:latest
+    - pipeline-stage-view:latest
+    - ssh-slaves:latest
+    - timestamper:latest
+    - workflow-aggregator:latest
+    - ws-cleanup:latest
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
 
