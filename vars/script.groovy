@@ -3,16 +3,10 @@
 def sendTelegramMessage(projectName, chatId, botToken, gitBranch) {
   try {
     sh(
-      script: """#!/usr/bin/env bash
-        curl --location --request POST 'https://api.telegram.org/bot${botToken}/sendMessage' \
-        --header 'Content-Type: application/json' \
-        --data-raw '{
-            "chat_id": ${chatId},
-            "parse_mode": "HTML",
-            "text": "<b>Project</b> : ${projectName} <b>Branch</b>: ${gitBranch} <b>Build </b> : OK <b>Test suite</b> = Passed"
-        }'
-      """
-    )
+      script: """	#!/usr/bin/env bash
+	curl -s -X POST https://api.telegram.org/bot[TOKENID]/sendMessage -d chat_id=[ID] -d text="your message"
+	"""
+
     log("Pushed success")
   } catch(err) {
     logError("Push failed")
