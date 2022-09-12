@@ -4,13 +4,8 @@ def sendTelegramMessage(projectName, chatId, botToken, gitBranch) {
   try {
     sh(
       script: """	#!/usr/bin/env bash
-	curl -s -X POST https://api.telegram.org/bot[TOKENID]/sendMessage -d chat_id=[ID] -d text="your message"
+	curl -s -X POST https://api.telegram.org/bot5700617525:AAGXbkqZ2psOplICMFSWVhggYM2ySrNtgeQ/sendMessage -d chat_id=-678535988 -d text="your message"
 	"""
-
-    log("Pushed success")
-  } catch(err) {
-    logError("Push failed")
-    throw err
   }
 }
 
